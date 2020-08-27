@@ -47,13 +47,13 @@ const sideChange = ({ text }) => {
 }
 
 export default function Header(props) {
-    const [state, setstate] = useState(initialState)
+    // const [state, setstate] = useState(initialState)
     // useEffect(() => {
     //     setTimeout(() => {
     //         const menuNode = document.querySelectorAll('.tree-node')[0]
     //         menuNode.classList.add('tree-node-selected')
     //     }, 0)
-    // })
+    // }, [])
     return (
         <SidebarWrapper>
             <Layout style={{ width: '100%', height: '100%' }}>

@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { DataGrid, GridColumn, Layout, LayoutPanel } from 'rc-easyui';
 import Home from './views/Home'
-
+import Test from './views/Test'
 const initData = [
   { "code": "FI-SW-01", "name": "Koi", "unitcost": 10.00, "status": "P", "listprice": 36.50, "attr": "Large", "itemid": "EST-1" },
   { "code": "K9-DL-01", "name": "Dalmation", "unitcost": 12.00, "status": "P", "listprice": 18.50, "attr": "Spotted Adult Female", "itemid": "EST-10" },
@@ -22,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Home></Home>
+      {/* <Test /> */}
       {/* <div>
         <DataGrid data={data} style={{ height: 250 }}>
           <GridColumn field="itemid" title="Item ID"></GridColumn>
