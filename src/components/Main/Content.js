@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { SideMenu, LinkButton } from 'rc-easyui'
 import One from './One'
 const SidebarWrapper = styled.div`
     height:100%;
@@ -12,50 +11,7 @@ const SidebarWrapper = styled.div`
     }
 `
 
-const initialState = [
-    {
-        text: "菜单",
-        state: "open",
-        children: [
-            {
-                text: "微信用户信息"
-            },
-            {
-                text: "售后服务申请单"
-            },
-            {
-                text: "售后历史进度查询"
-            },
-            {
-                text: "客户信息"
-            },
-            {
-                text: "项目信息管理"
-            },
-            {
-                text: "用户"
-            },
-            {
-                text: "角色"
-            },
-            {
-                text: "用户角色"
-            }
-        ]
-    },
-]
-
-const sideChange = ({ text }) => {
-    const routerMap = {
-        "微信用户信息": () => {
-            console.log('我被执行了')
-        }
-    }
-    routerMap.hasOwnProperty(text) && routerMap[text]()
-}
-
 export default function Header(props) {
-    const [state, setstate] = useState(initialState)
     // useEffect(() => {
     //     setTimeout(() => {
     //         const menuNode = document.querySelectorAll('.tree-node')[0]

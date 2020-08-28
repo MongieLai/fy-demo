@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
 export default function Header(props) {
     return (
         <HeaderWrapper>
-            <img src='/images/egolure-logo.png'></img>
+            <img src='/images/egolure-logo.png' alt='logo'></img>
         </HeaderWrapper>
     )
 }

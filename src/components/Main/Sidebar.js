@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { SideMenu, LinkButton, Layout, LayoutPanel, Tree } from 'rc-easyui'
+import { Layout, LayoutPanel, Tree } from 'rc-easyui'
 const SidebarWrapper = styled.div`
     height:100%;
     width:200px;
@@ -37,14 +37,14 @@ const initialState = [
     }
 ]
 
-const sideChange = ({ text }) => {
-    const routerMap = {
-        "微信用户信息": () => {
-            console.log('我被执行了')
-        }
-    }
-    routerMap.hasOwnProperty(text) && routerMap[text]()
-}
+// const sideChange = ({ text }) => {
+//     const routerMap = {
+//         "微信用户信息": () => {
+//             console.log('我被执行了')
+//         }
+//     }
+//     routerMap.hasOwnProperty(text) && routerMap[text]()
+// }
 
 export default function Header(props) {
     // const [state, setstate] = useState(initialState)
