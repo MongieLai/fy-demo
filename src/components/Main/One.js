@@ -35,6 +35,7 @@ const AddProjectWrapper = styled.div`
             min-width:90px;
         }
     }
+
 `
 
 const Xxx = styled.div`
@@ -64,7 +65,6 @@ const queryDatas = {
 }
 
 function App2(props) {
-    console.log('1')
     const [companys, setCompanys] = useState([])
     const [afterSaleInfo, setAfterSaleInfo] = useState([])
     const [checkBoxState, setCheckBoxState] = useState({
@@ -95,7 +95,7 @@ function App2(props) {
     let addProjectRef = useRef(null)
     let addProjectRef2 = useRef(null)
     let message = useRef(null)
-    const [state] = useState({
+    const [state, setState] = useState({
         allChecked: false,
         rowClicked: false,
         position: "top",
@@ -126,8 +126,6 @@ function App2(props) {
         layout3: ["links", "info"]
     })
     const { total, pageNumber, pageSize } = q;
-    console.log(`total`)
-    console.log(total)
 
     const pager = (layout) => (
         <Pagination
@@ -152,14 +150,21 @@ function App2(props) {
         })
     }, [])
 
-    const handleRowCheck = (row, checked) => {
-
-    }
-
-
     const handleAllCheck = (checked) => {
-
+        if (state.rowClicked) {
+            return;
+        }
+        let data = companys.data.map(row => {
+            return Object.assign({}, row, { selected: checked })
+        });
+        this.setState({
+            allChecked: checked,
+            data: data
+        })
     }
+
+
+    const handleRowCheck = () => { }
 
     const submitProject = () => {
         const submitData = {
@@ -271,7 +276,7 @@ function App2(props) {
                                         <CheckBox checked={row.selected} onChange={(checked) => handleRowCheck(row, checked)}></CheckBox>
                                     )}
                                     header={() => (
-                                        afterSaleInfo.length === 0 ? "暂无" : <CheckBox checked={state.allChecked} onChange={(checked) => handleAllCheck(checked)}></CheckBox>
+                                        afterSaleInfo.length === 0 ? "暂无" : <CheckBox checked={state.allChecked}></CheckBox>
                                     )}
                                 />
                                 <GridColumn sortable field="status" title="状态"></GridColumn>
@@ -323,10 +328,11 @@ function App2(props) {
                             modal
                             ref={ref => addProjectRef2 = ref}
                         >
-                            <AddProjectWrapper>
-                                <div>
+                            <AddProjectWrapper >
+                                <div >
                                     <div>客户：</div>
                                     <ComboGrid
+
                                         placeholder={'请选择客户名称'}
                                         panelStyle={{ width: 400 }}
                                         data={companys}

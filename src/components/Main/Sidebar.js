@@ -58,7 +58,7 @@ export default function Header(props) {
         <SidebarWrapper>
             <Layout style={{ width: '100%', height: '100%' }}>
                 <LayoutPanel region="west" title="菜单" split={true} style={{ minWidth: "100%", maxWidth: "100%" }}>
-                    <Tree data={initialState}></Tree>
+                    <Tree componentDidUpdate={e => console.log(e)} selectNode={(e) => { console.log(e); console.log('fjkldsajfkljdsaklfjdsa') }} data={initialState}></Tree>
                 </LayoutPanel>
             </Layout>
             {/* <SideMenu style={{ width: `100%`, height: "100%" }}

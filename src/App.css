@@ -4,7 +4,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height        : 40vmin;
   pointer-events: none;
 }
 
@@ -14,13 +14,15 @@
   }
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   padding: 0;
-  margin: 0;
+  margin : 0;
 }
 
 img {
-  max-width: 100%;
+  max-width : 100%;
   max-height: 100%;
 }
 
@@ -28,15 +30,20 @@ img {
   width: 100% !important;
 }
 
+.datagrid {
+  display       : flex;
+  flex-direction: column-reverse !important;
+}
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height      : 100vh;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+  font-size       : calc(10px + 2vmin);
+  color           : white;
 }
 
 .App-link {
@@ -47,6 +54,7 @@ img {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
