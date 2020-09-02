@@ -1,18 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import Sidebar from './Main/Sidebar'
-import Content from './Main/Content'
+import Sidebar from './Sidebar'
+import AfterSale from './Home/AfterSale'
 const MainWrapper = styled.div`
-    height:92vh;
-    border-top:1px solid #d7d7d7;
-    display:flex;
-
+    border:1px solid red;
 `
-export default function Header(props) {
-    return (
-        <MainWrapper>
-            <Sidebar />
-            <Content />
-        </MainWrapper>
-    )
+export default class Header extends React.Component {
+    render() {
+        return (
+            <AfterSale />
+        )
+    }
+
 }
